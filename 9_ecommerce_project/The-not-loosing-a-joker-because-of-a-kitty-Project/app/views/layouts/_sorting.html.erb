@@ -1,0 +1,8 @@
+<!-- Sort by categories -->
+<div class="col-6">
+  <div class="row justify-content-around">
+    <% @categories.each do |category| %>
+      <p id=<%= category.title.split.join.downcase %> class="btn btn-outline-primary"><%= category.title %></p>
+    <% end %>
+  </div>
+</div>

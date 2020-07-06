@@ -1,0 +1,39 @@
+<div class="container">
+  <%= button_to "Recevoir un email", { action: "create" }, remote: true, class: " btn btn-primary my-3" %>
+
+  <div class="row">
+    <!-- List email-->
+    <div class="col-4">
+      <table class="table table-striped text-center">
+        <thead class="thead-dark">
+        <tr class="text-left">
+          <th scope="col">Objet</th>
+        </tr>
+        </thead>
+        <tbody class="text-left" id="email_list">
+        <% @emails.all.each do |email| %>
+          <%= render 'email', email: email %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Email content -->
+    <div class="col-8">
+      <table class="table table-striped text-center">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Contenu</th>
+      </tr>
+      </thead>
+      <tbody >
+        <tr id="email-content">
+          <td scope="row">
+            <span id="email_body"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

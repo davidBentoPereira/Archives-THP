@@ -1,0 +1,128 @@
+<!-- Useful CDN for this page -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="row" style="margin-bottom:100px;">
+  <!-- Show Gossip -->
+  <div class="col-5">
+    <h2 class="display-4 text-center my-3">Le petit potin</h2>
+    <div class="card sticky">
+      <img class="card-img-top" alt="Card image cap" src="https://actu.meilleurmobile.com/wp-content/uploads/2015/06/gossip-application.jpg">
+      <div class="card-body text-center">
+        <h3 class="card-title"><%=@gossip.title %></h3>
+        <p class="card-text"><%= @gossip.content %></p>
+        <div class="row justify-content-center">
+          <div class="row justify-content-center">
+            <div class="col">
+              <a class='btn btn-info btn-block' href="<%= edit_gossip_path %>">Editer</a>
+            </div>
+            <div class="col">
+              <%= form_tag gossip_path(@gossip.id), method: "delete" do %>
+                <%= submit_tag "Supprimer", {class: 'btn btn-danger btn-block'} %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-center">
+        <small class="text-muted">
+          <i class="fas fa-user"></i> Par <a href="<%= user_path(@gossip.user.id) %>"><%=@gossip.user.first_name %></a>
+          <i class="far fa-calendar-alt"> le </i> <%=@gossip.created_at.strftime("%d/%m/%Y") %>
+          <i class="far fa-building"></i> à <a href="<%= city_path(@gossip.user.city.id) %>"><%=@gossip.user.city.name %></a>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <!-- List Comments -->
+  <div class="col-7">
+    <h2 class="display-4 text-center my-3">Commentaires</h2>
+    <%if @comments.empty? %>
+      <p>Aucun commentaire</p>
+    <% else %>
+      <section class="comment-list" style="margin-top: -3em">
+        <% i = 0 %>
+        <% @comments.each do |comment| %>
+          <% if i % 2 === 0 %>
+            <!-- Right Comment -->
+            <article class="row">
+              <div class="col-md-2 col-sm-2 hidden-xs">
+                <img class="img-responsive" src="<%= image_path 'bento_cowboy.png' %>"  alt=""/>
+              </div>
+              <div class="col-md-10 col-sm-10">
+                <div class="panel panel-default arrow left">
+                  <%= form_tag comment_path(comment.id), method: "delete", style: "display: inline" do %>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  <% end %>
+                  <div class="panel-body">
+                    <header class="text-left">
+                      <div class="comment-user"><i class="fa fa-user"></i> <%=comment.user.full_name %></div>
+                      <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> <%=comment.user.created_at.strftime("%d %b %Y à %H:%I") %></time>
+                    </header>
+                    <div class="comment-post">
+                      <p><%=comment.content %></p>
+                    </div>
+                    <p class="text-right">
+                      <a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a>
+                      <a href="#" class="btn btn-default btn-sm"><i class="fa fa-edit"></i> Editer</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          <% else %>
+            <!-- Left Comment -->
+            <article class="row">
+              <div class="col-md-10 col-sm-10">
+                <div class="panel panel-default arrow right">
+                  <div class="panel-body">
+                    <div class="">
+                      <%= form_tag comment_path(comment.id), method: "delete", style: "display: inline" do %>
+                        <button class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      <% end %>
+                    </div>
+                    <header class="text-right">
+                      <div class="comment-user"><%=comment.user.full_name %> <i class="fa fa-user"></i></div>
+                      <time class="comment-date" datetime="16-12-2014 01:05"><%=comment.user.created_at.strftime("%d %b %Y à %H:%I") %> <i class="fa fa-clock-o"></i></time>
+                    </header>
+                    <div class="comment-post">
+                      <p><%=comment.content %></p>
+                    </div>
+                    <p class="text-right">
+                      <a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a>
+                      <a href="<%= edit_comment_path(comment.id) %>" class="btn btn-default btn-sm"><i class="fa fa-edit"></i> Editer</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2 col-sm-2 hidden-xs">
+                <img class="img-responsive" src="<%= image_path 'bento_pic.png' %>" />
+              </div>
+            </article>
+          <% end %>
+          <% i += 1 %>
+        <% end %>
+      </section>
+    <% end %>
+
+    <!-- Add a comment -->
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <%= form_tag comments_path(gossip: @gossip), method: "post" do %>
+          <div class="form-group">
+            <%= label_tag 'Ajouter un commentaire :' %>
+            <%= text_area_tag 'content', @comment.content, {class: 'form-control', rows: 5, placeholder: "Saisissez votre commentaire..."} %>
+          </div>
+          <div class="row justify-content-center">
+            <%= submit_tag "Valider", {class: 'btn btn-primary'} %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

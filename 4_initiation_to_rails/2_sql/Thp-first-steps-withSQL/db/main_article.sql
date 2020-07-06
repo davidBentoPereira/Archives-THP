@@ -1,0 +1,1 @@
+INSERT INTO article (id, author, title, content) VALUES (1, '1', 'Le ça et le moi', 'lorem ipsum');

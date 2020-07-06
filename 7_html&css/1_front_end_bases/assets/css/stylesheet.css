@@ -1,0 +1,68 @@
+/* Import */
+@import url("headers.css");
+@import url("general.css");
+@import url("buttons.css");
+@import url("form.css");
+@import url("list.css");
+
+/* Lists */
+.list-group {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.list-group a {
+  text-decoration: none;
+  color: #000000;
+  margin: 0px;
+}
+.list-group a:hover {
+  text-decoration: none;
+  color: grey
+}
+
+/* Forms */
+form {
+    margin: 0px 0px 12px 0px;
+}
+
+input[type=text] {
+    font-size:16px;
+    width:80%;
+    padding:8px 12px;
+    margin:12px;
+    border-radius:15px;
+    box-shadow: 0;
+    border: 1px solid #9C9389;
+}
+
+input[type=radio] {
+    size:4em;
+    color: red;
+    margin:12px;
+    border: 1px solid #9C9389;
+}
+
+select{
+    font-size:16px;
+    width:80%;
+    padding:12px 12px;
+    margin:12px;
+    border-radius:8px;
+    box-shadow: 0;
+    border:none;
+}
+
+textarea {
+    font-size: 16px;
+    padding:12px;
+    border-radius:8px;
+    width: 80%;
+    box-shadow:0;
+    margin:12px;
+    border: 1px solid #9C9389;
+}
+
+/* Cards */

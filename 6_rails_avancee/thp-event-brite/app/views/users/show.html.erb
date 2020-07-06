@@ -1,0 +1,43 @@
+<main class="container">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @user.description %>
+  </p>
+
+  <p>
+    <strong>First name:</strong>
+    <%= @user.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= @user.last_name %>
+  </p>
+
+  <%= link_to 'Editer le profil', edit_user_registration_path, class:"btn btn-outline-primary" %>
+  <%= link_to 'Retour Accueil', root_path, class:"btn btn-secondary" %>
+</main>
+
+  <!-- User's events -->
+<!--  <div class="row justify-content-center">-->
+    <%# @user_events.each do |event| %>
+<!--      <div class="col-md-4 mt-3">-->
+<!--        <div class="card mb-3">-->
+<!--          <div class="card-body">-->
+<!--            <h5 class="card-title"><%#= event.title %></h5>-->
+<!--            <p class="card-subtitle mb-2 text-muted"><small><%#= event.location %></small></p>-->
+<!--            <p class="card-text"><%#= event.price %> €</p>-->
+            <%#= link_to "See more",  event_path(event.id), class:"btn-primary btn-sm" %>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    <%# end %>
+<!--  </div>-->
+<!--</div>-->

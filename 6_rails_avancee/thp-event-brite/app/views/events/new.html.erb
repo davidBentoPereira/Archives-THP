@@ -1,0 +1,56 @@
+<h2 class="card-title text-center m-3">Créer un évènement de maboule !</h2>
+<div class="container col 6">
+
+  <%= form_for @event do |f| %>
+
+    <!-- Flash message -->
+    <% if @event.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <p>Nous n'avons pas réussi à créer l'évènement pour la (ou les) raison(s) suivante(s) :</p>
+        <ul>
+          <% @event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label "Titre" %><br />
+      <%= f.text_field :title, autofocus: true, autocomplete: "title", placeholder: "Nom de l'évènement", class: "form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Date de l'évènement" %><br />
+      <%= f.datetime_select :start_date, autocomplete: "start_date", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Durée de l'évènement (en min)" %><br />
+      <%= f.text_field :duration, autocomplete: "duration", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Description" %><br />
+      <%= f.text_area :description, autocomplete: "description", placeholder:"Description de l'évènement", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Lieu" %><br />
+      <%= f.text_field :location, autocomplete: "location", placeholder:"Lieu de l'évènement", class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Prix (€)" %><br />
+      <%= f.text_field :price, autocomplete: "price", placeholder:"Prix de l'inscription", class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Soumettre un évènement à validation" %>
+    </div>
+
+
+  <% end %>
+
+</div>
+

@@ -1,0 +1,24 @@
+<!-- Main content -->
+<div class="row">
+  <% @gossips.each do |gossip| %>
+    <div class="col-4 mb-5">
+      <div class="card">
+        <img class="card-img-top" alt="Card image cap" src="https://actu.meilleurmobile.com/wp-content/uploads/2015/06/gossip-application.jpg">
+        <div class="card-body text-center">
+          <h5 class="card-title"><%=gossip.title %></h5>
+          <a href="<%= gossip_path(gossip.id) %>" class="btn btn-info btn-block btn-sm my-3">Voir le potin</a>
+          <small class="text-muted">
+            <i class="fas fa-user"></i> <a href="<%= user_path(gossip.user.id) %>"><%=gossip.user.first_name %></a>
+            <span class="mx-3"><i class="far fa-calendar-alt"></i> <%=gossip.created_at.strftime("%d/%m/%Y") %></span>
+            <i class="far fa-building"></i> <a href="<%= city_path(gossip.user.city.id) %>"><%=gossip.user.city.name %></a>
+          </small>
+        </div>
+        <div class="card-footer text-center">
+          <span class="text-muted small">
+            <%= gossip.comments.count != 0 ? "#{gossip.comments.count} commentaire(s)" : "Aucun commentaire" %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

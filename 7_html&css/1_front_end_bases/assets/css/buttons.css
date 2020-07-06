@@ -1,0 +1,42 @@
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align:center;
+  vertical-align: middle;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25em;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.btn-primary { background-color: blue; color: white; border-color: blue; }
+.btn-secondary { background-color: grey; color: white; border-color: grey;}
+.btn-danger { background-color: red; color: white; border-color: red;}
+.btn-warning { background-color: orange; color: white; border-color: orange;}
+.btn-success { background-color: green; color: white; border-color: green;}
+.btn-info { background-color: lightskyblue; color: white; border-color: lightskyblue;}
+
+.btn-primary:hover { background-color: grey;}
+.btn-secondary:hover { background-color: grey;}
+.btn-danger:hover { background-color: grey;}
+.btn-warning:hover { background-color: grey;}
+.btn-success:hover { background-color: grey;}
+.btn-info:hover { background-color: grey;}
+
+.btn-outline-primary { background-color: white; color: blue; border-color: blue; }
+.btn-outline-secondary { background-color: white; color: grey; border-color: grey;}
+.btn-outline-danger { background-color: white; color: red; border-color: red;}
+.btn-outline-warning { background-color: white; color: orange; border-color: orange;}
+.btn-outline-success { background-color: white; color: green; border-color: green;}
+.btn-outline-info { background-color: white; color: lightskyblue; border-color: lightskyblue;}
+
+.btn-outline-primary:hover { background-color: grey;}
+.btn-outline-secondary:hover { background-color: grey;}
+.btn-outline-danger:hover { background-color: grey;}
+.btn-outline-warning:hover { background-color: grey;}
+.btn-outline-success:hover { background-color: grey;}
+.btn-outline-info:hover { background-color: grey;}

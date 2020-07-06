@@ -1,0 +1,47 @@
+<!-- Flash message -->
+<% if @user.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <p>Nous n'avons pas réussi à vous connecter pour la (ou les) raison(s) suivante(s) :</p>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="row justify-content-center mt-5">
+  <div class="col-5">
+    <div class="card">
+      <article class="card-body">
+        <h4 class="card-title text-center mb-4 mt-1">Connexion</h4>
+        <hr>
+        <p class="text-success text-center"><a class="text-success" href="<%=new_user_path %>">Vous n'avez pas de compte ? Inscrivez-vous !</a></p>
+
+        <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+              </div>
+              <%= text_field_tag 'email', @user.email, {class: 'form-control', placeholder: "Email"} %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+              </div>
+              <%= password_field_tag 'password', @user.password, {class: 'form-control', placeholder: "******"} %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= submit_tag "Connexion", {class: 'btn btn-primary btn-block'} %>
+          </div>
+          <p class="text-center"><a href="#" class="btn">Mot de passe oublié ?</a></p>
+        <% end %>
+      </article>
+    </div>
+  </div>
+</div>

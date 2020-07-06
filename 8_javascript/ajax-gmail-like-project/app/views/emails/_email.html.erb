@@ -1,0 +1,9 @@
+<!-- Change email's text color depending on if it is read -->
+<% color = email.read ? "text-secondary" : "text-primary" %>
+
+<tr id="<%=email.id%>">
+  <td>
+    <% if email.read %> <i class="fas fa-eye"></i> <% end %>
+    <%= link_to email.object, email_path(email.id), class: color, remote: true %>
+  </td>
+</tr>

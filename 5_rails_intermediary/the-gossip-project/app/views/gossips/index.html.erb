@@ -1,0 +1,13 @@
+<!-- Content title -->
+<h2 class="h1 text-center mb-3">Liste des potins</h2>
+
+<!-- Success message -->
+<% if flash[:success] %>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<!-- Main content -->
+<%= render "layouts/gossips_list" %>
+

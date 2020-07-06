@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>The Surfing Project</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://image.flaticon.com/icons/svg/1844/1844105.svg">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Fontawesome Icons CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <style>
+        .jumbotron {
+            width: 99.05vw;
+            height: 95vh;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("https://images.pexels.com/photos/1533729/pexels-photo-1533729.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .navbar-brand {
+            font-size: 1.7em !important;
+        }
+    </style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">The Surfing Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto h5">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Le programme</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Nos prochaines sessions
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Janvier</a>
+                    <a class="dropdown-item" href="#">Avril</a>
+                    <a class="dropdown-item" href="#">Juin</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- JUMBOTRON -->
+<section>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center text-light">
+            <h1 class="display-4">Partez à l'aventure</h1>
+            <h2 class="h3">Découvrez notre école de surf en peer-learning</h2>
+            <button type="button" class="btn btn-primary btn-lg m-3">Je m'inscris à la prochaine session</button>
+            <button type="button" class="btn btn-secondary btn-lg  m-3">Je découvre le programme</button>
+        </div>
+    </div>
+</section>
+<div class="container-fluid px-5">
+    <!-- THE SURFING PROJECT IN THREE POINTS -->
+    <section>
+        <div class="row justify-content-center pt-5 pb-3">
+            <h2 class="display-4">The Surfing Project en 3 points</h2>
+        </div>
+        <div class="row justify-content-around text-center">
+            <div class="col-12 col-md-4">
+                <i class="fas fa-money-bill-wave-alt fa-5x"></i>
+                <h3>Pas chère</h3>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <i class="fas fa-couch fa-5x"></i>
+                <h3>Relax</h3>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    ad minim veniam, quis dolor.
+                </p>
+            </div>
+            <div class="col-12 col-md-4">
+                <i class="fas fa-users fa-5x"></i>
+                <h3>La communauté</h3>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    quis nostrud exercitation ullamco velit.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- TESTIMONY -->
+    <section>
+        <div class="row justify-content-center pt-5 pb-3">
+            <h2 class="display-4">Témoignages</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="./img/man-sitting-on-the-beach.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text h4">Surfing's not a sport, it's a way of life, it's no hobby. It's a way of looking at that wave and saying, "Hey bud, let's party!"</p>
+                        <p class="card-text h5"><small class="text-muted">Jeff, Avril 2019</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="./img/blue-and-white-food-car.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text h4">Grâce à TSP je fais le tour du monde avec mon van et fais du surf ! Si l'expérience était à refaire je le referais plein de fois.</p>
+                        <p class="card-text h5"><small class="text-muted">Jean-Michel, Octobre 2018</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PRICE -->
+    <section>
+        <div class="row justify-content-center pt-5 pb-3">
+            <h2 class="display-4">Prix</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 text-center">
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-header h3">Semaine d'essai</div>
+                    <div class="card-body">
+                        <h5 class="card-title h1">0€</h5>
+                        <p class="card-text h4 py-3">Le kiff <br /> À Bali<br/> Pendant 1 semaine</p>
+                        <a href="#" class="btn btn-outline-primary btn-lg btn-block">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-header h3">Early Bird</div>
+                    <div class="card-body">
+                        <h5 class="card-title h1">15€</h5>
+                        <p class="card-text h4 py-3">Le kiff <br /> À Bali<br/> Pendant 12 semaine</p>
+                        <a href="#" class="btn btn-primary btn-lg btn-block">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card">
+                    <div class="card-header h3">En trois fois</div>
+                    <div class="card-body">
+                        <h5 class="card-title h1">7€ <span class="text-muted">/ mo</span></h5>
+                        <p class="card-text h4 py-3">Le kiff <br /> À Bali<br/> Pendant 12 semaine</p>
+                        <a href="#" class="btn btn-primary btn-lg btn-block">S'inscrire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer mt-auto h5 py-3">
+        <a href="https://github.com/davidBentoPereira/thp-surfing-project" class="text-muted ">© Bootstrap & The Surfing Project & Bento</a>
+    </footer>
+</div>
+<!-- Bootstrap JS CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

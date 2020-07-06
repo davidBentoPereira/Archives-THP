@@ -1,0 +1,14 @@
+<!-- Add a comment -->
+<div class="row justify-content-center">
+  <div class="col-12">
+    <%= form_tag comment_path, method: "put" do  %>
+      <div class="form-group">
+        <%= label_tag 'Editer le commentaire :' %>
+        <%= text_area_tag 'content', @comment.content, {class: 'form-control', rows: 5, placeholder: "Saisissez votre commentaire..."} %>
+      </div>
+      <div class="row justify-content-center">
+        <%= submit_tag "Valider", {class: 'btn btn-primary'} %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+body {
+  background-image: linear-gradient(to right, #fbc2ec 0%, #a6c1ee 51%, #fbc2eb 100%);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*  Paragraphs */
+/*h1, h2, h3, h4, h5, h6 { }*/
+/*p { }*/
+.text-lead {}
+.text-quote{}
+
+hr {
+  border: 1px solid lightpink;
+}
